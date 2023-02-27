@@ -4,8 +4,6 @@ const discord = require('discord.js')
 const webhookClient = new discord.WebhookClient(breakDiscordWebhook(core.getInput('webhook')));
 
 webhookClient.send({
-    username: core.getInput('name'),
-    avatar_url: core.getInput('icon'),
     content: core.getInput('message')
 })
 
@@ -17,6 +15,5 @@ function breakDiscordWebhook(webhook) {
     if (array[length - 1] == "github") {
         return { id: array[length - 3], token: array[length - 2] };
     }
-
     return { id: array[length - 2], token: array[length - 1] };
 };
