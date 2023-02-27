@@ -1,14 +1,10 @@
 const core = require('@actions/core');
-const XMLHttpRequest = require('xhr2');
+const discord = require('discord.js')
 
-const request = new XMLHttpRequest();
-request.open("POST", core.getInput('webhook'));
+const webhookClient = new discord.WebhookClient({url:core.getInput('webhook')});
 
-request.setRequestHeader('Content-type', 'application/json');
-const params = {
+webhookClient.send({
     username: core.getInput('name'),
     avatar_url: core.getInput('icon'),
     content: core.getInput('message')
-}
-
-request.send(JSON.stringify(params));
+})
