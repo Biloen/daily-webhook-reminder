@@ -1,7 +1,7 @@
 name: 'Daily webhook reminder'
 description: 'Sends a daily message at the assigned time'
 inputs:
-  discord-webhook:
+  webhook:
     description: 'The webhook'
     required: false
   message:

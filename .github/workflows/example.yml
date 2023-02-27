@@ -13,7 +13,7 @@ jobs:
         id: discord
         uses: Biloen/daily-webhook-reminder@1.3
         with:
-          discord-webhook: ${{ secrets.WEBHOOK }}
+          webhook: ${{ secrets.WEBHOOK }}
           message: ${{ secrets.MESSAGE }}
           name: ${{ secrets.NAME }}
           icon: ${{ secrets.ICON }}
