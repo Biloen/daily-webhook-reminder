@@ -11,7 +11,7 @@ jobs:
     steps:
       - name: Discord post action step
         id: discord
-        uses: Biloen/daily-webhook-reminder@1.3
+        uses: Biloen/daily-webhook-reminder@1.4
         with:
           webhook: ${{ secrets.WEBHOOK }}
           message: ${{ secrets.MESSAGE }}
