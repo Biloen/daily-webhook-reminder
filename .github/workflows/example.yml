@@ -1,0 +1,19 @@
+name: dailyreminder
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 19 * * *"
+
+jobs:
+  post-to-Discord:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Discord post action step
+        id: discord
+        uses: Biloen/daily-webhook-reminder@1.0
+        with:
+          discord-webhook: ${{ secrets.WEBHOOK }}
+          message: ${{ secrets.MESSAGE }}
+          name: ${{ secrets.NAME }}
+          icon: ${{ secrets.ICON }}
