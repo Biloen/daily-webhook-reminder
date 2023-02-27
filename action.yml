@@ -1,0 +1,18 @@
+name: 'Daily webhook reminder'
+description: 'Sends a daily message at the assigned time'
+inputs:
+  discord-webhook:
+    description: 'The webhook'
+    required: false
+  message:
+    description: 'The message'
+    required: false
+  name:
+    description: 'The name'
+    required: false
+  icon:
+    description: 'The icon, this is a image url'
+    required: false
+runs:
+  using: 'node16'
+  main: 'main.js'
