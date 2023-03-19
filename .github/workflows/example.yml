@@ -3,7 +3,7 @@ name: dailyreminder
 on:
   workflow_dispatch:
   schedule:
-    - cron: "0 19 * * *"
+    - cron: "* * * * *"
 
 jobs:
   post-to-Discord:
